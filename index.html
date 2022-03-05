@@ -8,15 +8,63 @@
   
   <title>Frontend Mentor | E-commerce product page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main>
+    <nav>
+      <div class="left">
+        <a><img src="images/logo.svg" alt="logo"></a>
+        <ul>
+          <li><a href="#">Collections</a> <span class="bar"></span></li>
+          <li><a href="#">Men</a> <span class="bar"></span></li>
+          <li><a href="#">Women</a> <span class="bar"></span></li>
+          <li><a href="#">About</a> <span class="bar"></span></li>
+          <li><a href="#">Contact</a> <span class="bar"></span></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="cart" aria-label="cart button"><img src="images/icon-cart.svg" alt="cart-icon"></button>
+        <img class="avatar" src="images/image-avatar.png" alt="avatar">
+      </div>
+    </nav>
 
-  Collections
+    <hr>
+
+    <div class="container">
+      <div class="preview">
+        <img class="image" src="images/image-product-1.jpg" alt="product">
+        <ul class="thumbnails">
+          <li><button class="active-border"><img src="images/image-product-1-thumbnail.jpg" class="active" data-order="1" alt="product thumbnail"></button></li>
+          <li><button><img src="images/image-product-2-thumbnail.jpg" data-order="2" alt="product thumbnail"></button></li>
+          <li><button><img src="images/image-product-3-thumbnail.jpg" data-order="3" alt="product thumbnail"></button></li>
+          <li><button><img src="images/image-product-4-thumbnail.jpg" data-order="4" alt="product thumbnail"></button></li>
+        </ul>
+      </div>
+
+      <div class="info">
+        <h1>Sneaker Company</h1>
+        <h2>Fall Limited Edition Sneakers</h2>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <h3>$125.00 <span>50%</span></h3>
+          <span class="original">$250</span>
+        </div>
+        <div class="inputs">
+          <div class="items">
+            <button class="plus"><img src="images/icon-minus.svg" alt="minus icon"></button>
+            <span class="quantity">0</span>
+            <button class="minus"><img src="images/icon-plus.svg" alt="plus icon"></button>
+          </div>
+          <button class="add" aria-label="add to cart button"><img src="images/icon-cart.svg" alt="cart icon"> Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Collections
   Men
   Women
   About
@@ -35,10 +83,10 @@
 
   0
   Add to cart
-  
-  <div class="attribution">
+   -->
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
 </body>
 </html>
