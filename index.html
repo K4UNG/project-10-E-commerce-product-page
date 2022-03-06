@@ -12,35 +12,53 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main>
-    <nav>
-      <div class="left">
-        <a><img src="images/logo.svg" alt="logo"></a>
+  <div class="filter"></div>
+  <header>
+    <div class="left">
+      <button class="menu"><img src="images/icon-menu.svg" alt=""></button>
+      <img  class="logo" src="images/logo.svg" alt="logo">
+      <nav>
+        <button class="menu-close"><img src="images/icon-close.svg" alt=""></button>
         <ul>
-          <li><a href="#">Collections</a> <span class="bar"></span></li>
-          <li><a href="#">Men</a> <span class="bar"></span></li>
-          <li><a href="#">Women</a> <span class="bar"></span></li>
-          <li><a href="#">About</a> <span class="bar"></span></li>
-          <li><a href="#">Contact</a> <span class="bar"></span></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
+      </nav>
+    </div>
+    <div class="right">
+      <button aria-label="cart button"><img class="cart" src="images/icon-cart.svg" alt=""></button>
+      <img src="images/image-avatar.png" alt="avatar">
+    </div>
+    <div class="popup">
+      <p>Cart</p>
+      <hr>
+      <div class="cart-item">
+        <p class="bg-text">Your cart is empty.</p>
       </div>
-      <div class="right">
-        <button class="cart" aria-label="cart button"><img src="images/icon-cart.svg" alt="cart-icon"></button>
-        <img class="avatar" src="images/image-avatar.png" alt="avatar">
-      </div>
-    </nav>
+    </div>
+  </header>
 
-    <hr>
+  <hr>
 
+  <main>
     <div class="container">
       <div class="preview">
-        <img class="image" src="images/image-product-1.jpg" alt="product">
-        <ul class="thumbnails">
-          <li><button class="active-border"><img src="images/image-product-1-thumbnail.jpg" class="active" data-order="1" alt="product thumbnail"></button></li>
-          <li><button><img src="images/image-product-2-thumbnail.jpg" data-order="2" alt="product thumbnail"></button></li>
-          <li><button><img src="images/image-product-3-thumbnail.jpg" data-order="3" alt="product thumbnail"></button></li>
-          <li><button><img src="images/image-product-4-thumbnail.jpg" data-order="4" alt="product thumbnail"></button></li>
-        </ul>
+        <div class="image">
+          <button class="previous" data-dest="4" aria-label="previous button"><img src="images/icon-previous.svg" alt=""></button>
+          <img class="photo" src="images/image-product-1.jpg" alt="product">
+          <button class="next" data-dest="2" aria-label="next button"><img src="images/icon-next.svg" alt=""></button>
+        </div>
+        <div class="thumbnails">
+          <ul>
+            <li><button class="thumb-img" data-order="1"><img src="images/image-product-1-thumbnail.jpg" alt="product thumbnail"></button></li>
+            <li><button class="thumb-img" data-order="2"><img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail"></button></li>
+            <li><button class="thumb-img" data-order="3"><img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail"></button></li>
+            <li><button class="thumb-img" data-order="4"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail"></button></li>
+          </ul>
+        </div>
       </div>
 
       <div class="info">
@@ -50,40 +68,20 @@
           durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
         <div class="price">
           <h3>$125.00 <span>50%</span></h3>
-          <span class="original">$250</span>
+          <p class="discount">$250.00</p>
         </div>
         <div class="inputs">
           <div class="items">
-            <button class="plus"><img src="images/icon-minus.svg" alt="minus icon"></button>
-            <span class="quantity">0</span>
-            <button class="minus"><img src="images/icon-plus.svg" alt="plus icon"></button>
+            <button class="minus"><img src="images/icon-minus.svg" alt="minus icon"></button>
+            <p class="quantity">0</p>
+            <button class="plus"><img src="images/icon-plus.svg" alt="plus icon"></button>
           </div>
-          <button class="add" aria-label="add to cart button"><img src="images/icon-cart.svg" alt="cart icon"> Add to cart</button>
+          <button class="add" aria-label="'add to cart' button"><img src="images/icon-cart.svg" alt="cart icon"> Add to cart</button>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-   -->
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
