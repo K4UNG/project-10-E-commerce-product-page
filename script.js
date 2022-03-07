@@ -90,6 +90,11 @@ plus.onclick = () => {
 cartBtn.onclick = () => {
     cart.classList.toggle('active');
     popup.classList.toggle('popup-shown');
+    if (cart.classList.contains('active') {
+        cartItem.childNodes[3].style['pointer-events'] = 'all';
+    } else {
+        cartItem.childNodes[3].style['pointer-events'] = 'none';
+    }
 }
 
 add.onclick = () => {
