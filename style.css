@@ -624,6 +624,10 @@ body>hr {
         padding: 0 6em;
     }
 
+    .right>img {
+        width: 40px;
+    }
+
     .preview-pop {
         width: 30%;
     }
@@ -696,6 +700,10 @@ body>hr {
 
     .container>* {
         flex-basis: 45%;
+    }
+
+    .info h2 {
+        font-size: 3rem;
     }
 
     .price {
