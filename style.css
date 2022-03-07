@@ -733,13 +733,14 @@ body>hr {
     
     nav a {
         text-decoration: none;
-        color: black;
+        color: var(--dark-gray-blue);
         font-weight: 400;
         position: relative;
     }
 
     nav a:hover,
     nav a:focus {
+        color: black;
         font-weight: 700;
     }
 
