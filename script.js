@@ -90,6 +90,13 @@ plus.onclick = () => {
 cartBtn.onclick = () => {
     cart.classList.toggle('active');
     popup.classList.toggle('popup-shown');
+    if (popup.classList.contains('popup-shown')) {
+        multiple.style['pointer-events'] = 'all';
+        checkout.style['pointer-events'] = 'all';
+    } else {
+        multiple.style['pointer-events'] = 'none';
+        checkout.style['pointer-events'] = 'none';
+    }
 }
 
 add.onclick = () => {
@@ -124,7 +131,6 @@ function addItem(quan) {
         curr.style.display = 'unset';
         let total = quan * 125.00;
         cartItem.childNodes[3].style.opacity = '1';
-        cartItem.childNodes[3].style['pointer-events'] = 'all';
         final.textContent = `$${total}`;
         multiple.textContent = quan;
 
