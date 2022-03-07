@@ -91,10 +91,10 @@ cartBtn.onclick = () => {
     cart.classList.toggle('active');
     popup.classList.toggle('popup-shown');
     if (popup.classList.contains('popup-shown')) {
-        multiple.style['pointer-events'] = 'all';
+        clear.style['pointer-events'] = 'all';
         checkout.style['pointer-events'] = 'all';
     } else {
-        multiple.style['pointer-events'] = 'none';
+        clear.style['pointer-events'] = 'none';
         checkout.style['pointer-events'] = 'none';
     }
 }
@@ -137,5 +137,3 @@ function addItem(quan) {
     curr.textContent = quan;
     }
 }
-
-console.log(cartItem.childNodes[3])
