@@ -156,6 +156,21 @@ nav a:focus {
     border: 0;
     background: transparent;
     cursor: pointer;
+    position: relative;
+}
+
+#curr {
+    position: absolute;
+    background: var(--pri-orange);
+    color: white;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: 0 8px;
+    border-radius: 8px;
+    bottom: 100%;
+    left: 100%;
+    transform: translate(-50%, 50%);
+    pointer-events: none;
 }
 
 .right button:hover img,
@@ -202,6 +217,7 @@ nav a:focus {
     transform: translateX(-50%) translateY(-20px);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
             rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    overflow: hidden;
 }
 
 .popup-shown {
@@ -226,6 +242,73 @@ nav a:focus {
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
+}
+
+#item {
+    position: relative;
+    background: white;
+    z-index: 4;
+    padding: 1em;
+    transition: .2s ease;
+}
+
+.up {
+    width :100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contain {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.contain>img {
+    width: 25%;
+    border-radius: 10px;
+}
+
+.up button {
+    width: 20px;
+    border: none;
+    background: none;
+    height: fit-content;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.up img:last-child {
+    width: 100%;
+}
+
+#text {
+    color: var(--dark-gray-blue);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+strong {
+    color: black;
+}
+
+.checkout {
+    padding: 1em;
+    background: var(--pri-orange);
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    color: white;
+    width: 100%;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.checkout:hover {
+    opacity: .6;
 }
 
 /* ---------main-----------*/
@@ -322,6 +405,7 @@ nav a:focus {
 .price span {
     font-size: .725rem;
     background: var(--pri-pale-orange);
+    border-radius: 5px;
     padding: .3em;
     color: var(--pri-orange);
     margin-left: .5em;

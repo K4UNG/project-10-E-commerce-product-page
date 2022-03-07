@@ -8,8 +8,28 @@ let photo = document.querySelector('.photo');
 const minus = document.querySelector('.minus');
 const plus = document.querySelector('.plus');
 let quantity = document.querySelector('.quantity');
+const cartBtn = document.querySelector('.cart-btn');
 const cart = document.querySelector('.cart');
 let popup = document.querySelector('.popup');
+const add = document.querySelector('.add');
+let curr = document.querySelector('#curr');
+let cartItem = document.querySelector('.cart-item');
+const clear = document.querySelector('.remove');
+const checkout = document.querySelector('.checkout');
+let multiple = document.querySelector('#amount');
+let final = document.querySelector('.total');
+
+addItem(localStorage.getItem('quantity'));
+
+clear.onclick = () => {
+    addItem(0);
+    localStorage.setItem('quantity', 0);
+}
+
+checkout.onclick = () => {
+    addItem(0);
+    localStorage.setItem('quantity', 0);
+}
 
 menu.onclick = () => {
     nav.classList.add('shown');
@@ -67,7 +87,49 @@ plus.onclick = () => {
     quantity.textContent = amount;
 }
 
-cart.onclick = () => {
+cartBtn.onclick = () => {
     cart.classList.toggle('active');
     popup.classList.toggle('popup-shown');
 }
+
+add.onclick = () => {
+    let quan = localStorage.getItem('quantity');
+    if (quan === null) {
+        quan = 0;
+    }
+    else {
+        quan = parseInt(quan);
+    }
+    let added = parseInt(quantity.textContent);
+    if (! added <= 0) {
+        quan += added;
+    }
+    quantity.textContent = 0;
+    localStorage.setItem('quantity', quan);
+    addItem(quan);
+}
+
+function addItem(quan) {
+    if (quan == null) {
+        quan = 0;
+    } else {
+        quan = parseInt(quan);
+    }
+    if (quan <= 0) {
+        curr.style.display = 'none';
+        cartItem.childNodes[3].style.opacity = '0';
+        cartItem.childNodes[3].style['pointer-events'] = 'none';
+    }
+    else if (quan > 0) {
+        curr.style.display = 'unset';
+        let total = quan * 125.00;
+        cartItem.childNodes[3].style.opacity = '1';
+        cartItem.childNodes[3].style['pointer-events'] = 'all';
+        final.textContent = `$${total}`;
+        multiple.textContent = quan;
+
+    curr.textContent = quan;
+    }
+}
+
+console.log(cartItem.childNodes[3])

@@ -29,7 +29,7 @@
       </nav>
     </div>
     <div class="right">
-      <button aria-label="cart button"><img class="cart" src="images/icon-cart.svg" alt=""></button>
+      <button class="cart-btn" aria-label="cart button"><img class="cart" src="images/icon-cart.svg" alt=""><p id="curr">0</p></button>
       <img src="images/image-avatar.png" alt="avatar">
     </div>
     <div class="popup">
@@ -37,6 +37,19 @@
       <hr>
       <div class="cart-item">
         <p class="bg-text">Your cart is empty.</p>
+        <div id="item">
+          <div class="up">
+            <div class="contain">
+              <img src="images/image-product-1-thumbnail.jpg" alt="sneaker thumbnail">
+              <div id="text">
+                <p class="title">Auntum Limited Edition</p>
+                <p class="math">$125.00 x <span id="amount">3</span> <strong class="total">$375.00</strong></p>
+              </div>
+            </div>
+            <button class="remove" aria-label="delete button"><img src="images/icon-delete.svg" alt=""></button>
+          </div>
+          <button class="checkout">Checkout</button>
+        </div>
       </div>
     </div>
   </header>
