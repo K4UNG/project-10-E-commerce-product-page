@@ -643,6 +643,7 @@ strong {
         display: flex;
         gap: 2.5em;
         justify-content: center;
+        align-items: center;
     }
 
     .container>* {
@@ -661,6 +662,11 @@ strong {
     .info>p {
         margin-top: 2em;
         max-width: 40ch;
+    }
+
+    .inputs {
+        display: flex;
+        gap: .5em;
     }
 }
 
@@ -681,7 +687,6 @@ strong {
 
     .container {
         justify-content: space-around;
-        align-items: center;
     }
 
     .container>* {
