@@ -369,6 +369,10 @@ strong {
     opacity: .6;
 }
 
+body>hr {
+    opacity: .5;
+}
+
 /* ---------main-----------*/
 
 .image,
