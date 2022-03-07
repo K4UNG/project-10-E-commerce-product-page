@@ -12,6 +12,24 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="box">
+    <div class="preview-pop">
+      <div class="image-pop">
+        <button class="close-pop" aria-label="close button"><img src="images/icon-close.svg" alt=""></button>
+        <img class="photo-pop" data-n="1" src="images/image-product-1.jpg" alt="product">
+        <button class="previous-pop" data-dest="4" aria-label="previous button"><img src="images/icon-previous.svg" alt=""></button>
+        <button class="next-pop" data-dest="2" aria-label="next button"><img src="images/icon-next.svg" alt=""></button>
+      </div>
+      <div class="thumbnails-pop">
+        <ul>
+          <button class="thumb-pop" data-order="1"><img src="images/image-product-1-thumbnail.jpg" alt="product thumbnail"></button>
+          <button class="thumb-pop" data-order="2"><img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail"></button>
+          <button class="thumb-pop" data-order="3"><img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail"></button>
+          <button class="thumb-pop" data-order="4"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail"></button>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="filter"></div>
   <header>
     <div class="left">
@@ -60,16 +78,16 @@
     <div class="container">
       <div class="preview">
         <div class="image">
-          <button class="previous" data-dest="4" aria-label="previous button"><img src="images/icon-previous.svg" alt=""></button>
           <img class="photo" src="images/image-product-1.jpg" alt="product">
+          <button class="previous" data-dest="4" aria-label="previous button"><img src="images/icon-previous.svg" alt=""></button>
           <button class="next" data-dest="2" aria-label="next button"><img src="images/icon-next.svg" alt=""></button>
         </div>
         <div class="thumbnails">
           <ul>
-            <li><button class="thumb-img" data-order="1"><img src="images/image-product-1-thumbnail.jpg" alt="product thumbnail"></button></li>
-            <li><button class="thumb-img" data-order="2"><img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail"></button></li>
-            <li><button class="thumb-img" data-order="3"><img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail"></button></li>
-            <li><button class="thumb-img" data-order="4"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail"></button></li>
+            <button class="thumb clicked" data-order="1"><img class="clicked-img" src="images/image-product-1-thumbnail.jpg" alt="product thumbnail"></button>
+            <button class="thumb" data-order="2"><img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail"></button>
+            <button class="thumb" data-order="3"><img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail"></button>
+            <button class="thumb" data-order="4"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail"></button>
           </ul>
         </div>
       </div>

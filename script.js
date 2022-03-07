@@ -18,6 +18,13 @@ const clear = document.querySelector('.remove');
 const checkout = document.querySelector('.checkout');
 let multiple = document.querySelector('#amount');
 let final = document.querySelector('.total');
+const thumbs = document.querySelectorAll('.thumb');
+const box = document.querySelector('.box');
+const closePop = document.querySelector('.close-pop');
+let photoPop = document.querySelector('.photo-pop');
+const nextPop = document.querySelector('.next-pop');
+const previousPop = document.querySelector('.previous-pop');
+const thumbsPop = document.querySelectorAll('.thumb-pop');
 
 addItem(localStorage.getItem('quantity'));
 
@@ -136,4 +143,90 @@ function addItem(quan) {
 
     curr.textContent = quan;
     }
+}
+
+thumbs.forEach(thumb => {
+    thumb.onclick = () => {
+        thumbs.forEach(thumb => {
+            thumb.classList.remove('clicked');
+            thumb.childNodes[0].classList.remove('clicked-img');
+        });
+        thumb.classList.toggle('clicked');
+        thumb.childNodes[0].classList.toggle('clicked-img');
+        photo.setAttribute('src', `images/image-product-${thumb.dataset.order}.jpg`)
+    }
+});
+thumbsPop.forEach(thumb => {
+    thumb.onclick = () => {
+        thumbsPop.forEach(thumb => {
+            thumb.classList.remove('clicked');
+            thumb.childNodes[0].classList.remove('clicked-img');
+        });
+        thumb.classList.toggle('clicked');
+        thumb.childNodes[0].classList.toggle('clicked-img');
+        photoPop.setAttribute('src', `images/image-product-${thumb.dataset.order}.jpg`)
+    }
+});
+
+photo.onclick = () => {
+    box.style.display = 'unset';
+    let current;
+    thumbs.forEach(thumb => {
+        if (thumb.classList.contains('clicked')) {
+            current = thumb.dataset.order;
+        }
+    })
+    console.log(current)
+    photoPop.dataset.n = current;
+    photoPop.setAttribute('src', `images/image-product-${current}.jpg`);
+    thumbsPop.forEach(thumb => {
+        if (thumb.dataset.order == current) {
+            thumb.classList.add('clicked');
+            thumb.childNodes[0].classList.add('clicked-img');
+        } else {
+            thumb.classList.remove('clicked');
+            thumb.childNodes[0].classList.remove('clicked-img');
+        }
+    })
+
+}
+
+closePop.onclick = () => {
+    box.style.display = 'none';
+}
+
+nextPop.onclick = () => {
+    let current = parseInt(photoPop.dataset.n) + 1;
+    if (current == 5) {
+        current = 1;
+    }
+    photoPop.setAttribute('src', `images/image-product-${current}.jpg`);
+    photoPop.dataset.n = current;
+    thumbsPop.forEach(thumb => {
+        if (thumb.dataset.order == current) {
+            thumb.classList.add('clicked');
+            thumb.childNodes[0].classList.add('clicked-img');
+        } else {
+            thumb.classList.remove('clicked');
+            thumb.childNodes[0].classList.remove('clicked-img');
+        }
+    })
+}
+
+previousPop.onclick = () => {
+    let current = parseInt(photoPop.dataset.n) - 1;
+    if (current == 0) {
+        current = 4;
+    }
+    photoPop.setAttribute('src', `images/image-product-${current}.jpg`);
+    photoPop.dataset.n = current;
+    thumbsPop.forEach(thumb => {
+        if (thumb.dataset.order == current) {
+            thumb.classList.add('clicked');
+            thumb.childNodes[0].classList.add('clicked-img');
+        } else {
+            thumb.classList.remove('clicked');
+            thumb.childNodes[0].classList.remove('clicked-img');
+        }
+    })
 }
