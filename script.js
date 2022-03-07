@@ -169,6 +169,7 @@ thumbsPop.forEach(thumb => {
 });
 
 photo.onclick = () => {
+    if (screen.width > 480) {
     box.style.display = 'unset';
     let current;
     thumbs.forEach(thumb => {
@@ -188,7 +189,7 @@ photo.onclick = () => {
             thumb.childNodes[0].classList.remove('clicked-img');
         }
     })
-
+    }
 }
 
 closePop.onclick = () => {
